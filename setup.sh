@@ -612,7 +612,7 @@ function install_php7 {
     sed -i "s|.*post_max_size = 8M.*|post_max_size = 128M|" /etc/php/7.0/fpm/php.ini
     sed -i "s|        fastcgi_pass unix:/var/run/php5-fpm.sock;|        fastcgi_pass unix:/var/run/php/php7.0-fpm.sock;|" /etc/nginx/conf.d/default.conf
     sed -i "s|.*;opcache.enable=1.*|opcache.enable=1|" /etc/php/7.0/fpm/php.ini
-    sed -i "s|.*;opcache.memory_consumption.*|opcache.memory_consumption=$op_mem|" /etc/php/7.0/fpm/php.in
+    sed -i "s|.*;opcache.memory_consumption.*|opcache.memory_consumption=$op_mem|" /etc/php/7.0/fpm/php.ini
     touch /usr/share/nginx/html/info.php
 /bin/cat <<"EOM" >/usr/share/nginx/html/info.php
     <?php
